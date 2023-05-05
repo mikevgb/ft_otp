@@ -8,7 +8,6 @@ import math
 def encryptAndDecrypt(flag, stringIn):
     # generate key, encrypt string, store encrypted string and the key
     if flag == 1:
-        print(stringIn)
         key = Fernet.generate_key()
         fernet = Fernet(key)
         encryptedString = fernet.encrypt(stringIn.encode())
@@ -22,7 +21,6 @@ def encryptAndDecrypt(flag, stringIn):
             key = f.read()
         fernet = Fernet(key)
         decryptedString = fernet.decrypt(stringIn).decode()
-        print("decryptedString =", decryptedString)
         return decryptedString
 
 def checkif64hex(stringToCheck):
